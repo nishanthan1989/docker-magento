@@ -1,4 +1,4 @@
-FROM php:7.4-fpm-bullseye
+FROM php:8.1-fpm-bullseye
 MAINTAINER Mark Shust <mark@shust.com>
 
 ARG APP_ID=1000
@@ -41,7 +41,7 @@ RUN apt-get update && apt-get install -y \
 RUN pecl channel-update pecl.php.net && pecl install \
     imagick \
     redis \
-    ssh2-1.2 \
+    ssh2-1.3.1 \
     xdebug \
   && pecl clear-cache \
   && rm -rf /tmp/pear
